@@ -1458,22 +1458,23 @@ h2 {
    11. Cookie consent banner, footer settings button and map consent overlay
    ========================================================================== */
 
+/* Compact floating card, bottom-left; on narrow screens it spans the width with a 1rem inset. */
 .cookie-banner {
     position: fixed;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    left: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
     z-index: 100;
     display: grid;
-    gap: 0.875rem;
-    max-width: 44rem;
-    margin: 0 auto;
-    padding: 1rem;
+    gap: 0.625rem;
+    width: calc(100% - 2rem);
+    max-width: 22rem;
+    box-sizing: border-box;
+    padding: 0.75rem;
     background: var(--card);
     color: var(--ink);
     border: 1px solid var(--line);
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.18);
+    border-radius: 0.875rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.18);
 }
 
 .cookie-banner[hidden] {
@@ -1482,8 +1483,8 @@ h2 {
 
 .cookie-banner-text {
     margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.5;
+    font-size: 0.8125rem;
+    line-height: 1.45;
 }
 
 .cookie-banner-text a {
@@ -1494,13 +1495,15 @@ h2 {
 .cookie-banner-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.625rem;
+    gap: 0.5rem;
 }
 
 .cookie-banner .btn {
     min-height: 2.75rem;
-    padding: 0.625rem 1rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.625rem;
     font: inherit;
+    font-size: 0.8125rem;
     font-weight: 600;
     cursor: pointer;
     white-space: normal;
@@ -1547,16 +1550,4 @@ h2 {
     font: inherit;
     font-weight: 600;
     cursor: pointer;
-}
-
-@media (min-width: 47.5rem) {
-    .cookie-banner {
-        grid-template-columns: 1fr auto;
-        align-items: center;
-        gap: 1.5rem;
-    }
-
-    .cookie-banner-actions {
-        grid-template-columns: auto auto;
-    }
 }
